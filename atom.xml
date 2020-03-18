@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.aifudao.site</id>
+    <id>https://tinet-shenjg.github.io</id>
     <title>程序猿Alex</title>
-    <updated>2020-03-18T15:34:10.594Z</updated>
+    <updated>2020-03-18T15:36:21.422Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.aifudao.site"/>
-    <link rel="self" href="https://blog.aifudao.site/atom.xml"/>
+    <link rel="alternate" href="https://tinet-shenjg.github.io"/>
+    <link rel="self" href="https://tinet-shenjg.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://blog.aifudao.site/images/avatar.png</logo>
-    <icon>https://blog.aifudao.site/favicon.ico</icon>
+    <logo>https://tinet-shenjg.github.io/images/avatar.png</logo>
+    <icon>https://tinet-shenjg.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 程序猿Alex</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://blog.aifudao.site/post/hello-gridea/</id>
-        <link href="https://blog.aifudao.site/post/hello-gridea/">
+        <id>https://tinet-shenjg.github.io/post/hello-gridea/</id>
+        <link href="https://tinet-shenjg.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
