@@ -1,22 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://tinet-shenjg.github.io</id>
-    <title>程序猿Alex</title>
-    <updated>2020-03-18T15:55:49.097Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://tinet-shenjg.github.io"/>
-    <link rel="self" href="https://tinet-shenjg.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://tinet-shenjg.github.io/images/avatar.png</logo>
-    <icon>https://tinet-shenjg.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 程序猿Alex</rights>
-    <entry>
-        <title type="html"><![CDATA[【Java面试基础篇】浅谈字符串]]></title>
-        <id>https://tinet-shenjg.github.io/post/java-mian-shi-ji-chu-pian-qian-tan-zi-fu-chuan/</id>
-        <link href="https://tinet-shenjg.github.io/post/java-mian-shi-ji-chu-pian-qian-tan-zi-fu-chuan/">
-        </link>
-        <updated>2020-03-18T15:51:44.000Z</updated>
-        <content type="html"><![CDATA[<div class="output_wrapper" id="output_wrapper_id" style="font-size: 15px; color: rgb(62, 62, 62); line-height: 1.8; word-spacing: 2px; letter-spacing: 2px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%); background-size: 20px 20px; background-position: center center;"><h2 id="h" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.6em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">浅谈字符串</span></h2>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【Java面试基础篇】浅谈字符串 | 程序猿Alex</title>
+<link rel="shortcut icon" href="https://tinet-shenjg.github.io/favicon.ico?v=1584546942361">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://tinet-shenjg.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="【Java面试基础篇】浅谈字符串 | 程序猿Alex - Atom Feed" href="https://tinet-shenjg.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="浅谈字符串
+
+  字符串操作是计算机程序设计中最常见的行为
+
+1.String
+String对象的基本特性 
+
+String对象是不可变的，通过查看JDK源码可以发现，String类中所有关于字符串的修改方法，都是创建了一个新的String..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tinet-shenjg.github.io">
+  <img class="avatar" src="https://tinet-shenjg.github.io/images/avatar.png?v=1584546942361" alt="">
+  </a>
+  <h1 class="site-title">
+    程序猿Alex
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/tinet-shenjg" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              【Java面试基础篇】浅谈字符串
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-18
+              </span>
+              <span>
+                10 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <div class="output_wrapper" id="output_wrapper_id" style="font-size: 15px; color: rgb(62, 62, 62); line-height: 1.8; word-spacing: 2px; letter-spacing: 2px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%); background-size: 20px 20px; background-position: center center;"><h2 id="h" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.6em 0px; font-weight: bold; font-size: 1.4em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">浅谈字符串</span></h2>
 <blockquote style="line-height: inherit; display: block; padding: 15px 15px 15px 1rem; font-size: 0.9em; margin: 1em 0px; color: rgb(0, 0, 0); border-left: 5px solid rgb(239, 112, 96); background: rgb(239, 235, 233); overflow: auto; overflow-wrap: normal; word-break: normal;">
   <p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 0px;">字符串操作是计算机程序设计中最常见的行为</p>
 </blockquote>
@@ -76,6 +159,94 @@
 <li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.7em 0px;">如果字符串只包含 LATIN-1编码的字符，<code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(248, 35, 117); background: rgb(248, 248, 248);">coder</code> 变量的值将为 0，因此字符串的长度就为字节数组的长度一致，否则 <code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(248, 35, 117); background: rgb(248, 248, 248);">coder</code> 变量的值为1，采用 UTF-16 编码，那么字符串的长度为字节数组长度的一半。</p>
 <pre style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;"><code class="hljs cs" style="overflow-wrap: break-word; margin: 0px 2px; line-height: 15px; font-size: 11px; font-weight: normal; word-spacing: -3px; letter-spacing: 0px; font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px; color: rgb(169, 183, 198); background: rgb(40, 43, 46); overflow-x: auto; padding: 0.5em; white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow: auto !important; display: -webkit-box !important;"><span class="linenum hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(174, 135, 250); padding-right: 20px; word-spacing: 0px; word-wrap: inherit !important; word-break: inherit !important;">1</span><span class="hljs-function" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(248, 35, 117); word-wrap: inherit !important; word-break: inherit !important;"><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(248, 35, 117); word-wrap: inherit !important; word-break: inherit !important;">public</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(248, 35, 117); word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;<span class="hljs-title" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(165, 218, 45); word-wrap: inherit !important; word-break: inherit !important;">length</span>(<span class="hljs-params" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(255, 152, 35); word-wrap: inherit !important; word-break: inherit !important;"></span>)&nbsp;</span>{<br><span class="linenum hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(174, 135, 250); padding-right: 20px; word-spacing: 0px; word-wrap: inherit !important; word-break: inherit !important;">2</span>&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(248, 35, 117); word-wrap: inherit !important; word-break: inherit !important;">return</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(248, 35, 117); word-wrap: inherit !important; word-break: inherit !important;">value</span>.length&nbsp;&gt;&gt;&nbsp;coder;<br><span class="linenum hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(174, 135, 250); padding-right: 20px; word-spacing: 0px; word-wrap: inherit !important; word-break: inherit !important;">3</span>}<br></code></pre></li>
 </ul>
-<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.7em 0px;">笔者比较菜，目前还在1.8上做开发，以后有使用心得再分享吧</p></div>]]></content>
-    </entry>
-</feed>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.7em 0px;">笔者比较菜，目前还在1.8上做开发，以后有使用心得再分享吧</p></div>
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '28f465679508859db026',
+    clientSecret: '397c946d769c5ac58211d4eb412a480e15c2a523',
+    repo: 'tinet-shenjg.github.io',
+    owner: 'tinet-shenjg',
+    admin: ['tinet-shenjg'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/tinet-shenjg" target="_blank">Alex</a>
+  <a class="rss" href="https://tinet-shenjg.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
