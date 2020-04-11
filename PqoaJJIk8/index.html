@@ -1,0 +1,274 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【LeetCode每日一题】螺旋矩阵 | 程序猿Alex</title>
+<link rel="shortcut icon" href="https://tinet-shenjg.github.io/favicon.ico?v=1586615626948">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://tinet-shenjg.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="【LeetCode每日一题】螺旋矩阵 | 程序猿Alex - Atom Feed" href="https://tinet-shenjg.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161150344-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161150344-1');
+</script>
+
+
+    <meta name="description" content="
+  微信公众号：程序员Alex关注可了解更多的编程知识。问题或建议，请公众号留言;如果你觉得文章对你有帮助，欢迎关注分享
+
+螺旋矩阵
+题目 
+给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所..." />
+    <meta name="keywords" content="算法,JAVA" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://tinet-shenjg.github.io">
+  <img class="avatar" src="https://tinet-shenjg.github.io/images/avatar.png?v=1586615626948" alt="">
+  </a>
+  <h1 class="site-title">
+    程序猿Alex
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/tinet-shenjg" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              【LeetCode每日一题】螺旋矩阵
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-04-11
+              </span>
+              <span>
+                12 min read
+              </span>
+              
+                <a href="https://tinet-shenjg.github.io/DYEl_KwXx/" class="post-tag">
+                  # 算法
+                </a>
+              
+                <a href="https://tinet-shenjg.github.io/h3bcprZVN/" class="post-tag">
+                  # JAVA
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://tinet-shenjg.github.io/post-images/PqoaJJIk8.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <div class="output_wrapper" id="output_wrapper_id" style="font-size: 16px; color: rgb(62, 62, 62); line-height: 1.6; word-spacing: 0px; letter-spacing: 0px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;"><blockquote style="line-height: inherit; display: block; padding: 15px 15px 15px 1rem; font-size: 0.9em; margin: 1em 0px; color: rgb(129, 145, 152); border-left: 6px solid rgb(220, 230, 240); background: rgb(242, 247, 251); overflow: auto; overflow-wrap: normal; word-break: normal;">
+  <p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 0px;">微信公众号：<strong style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; font-weight: bold;"><a href="#jump_10" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">程序员Alex</a></strong><br>关注可了解更多的编程知识。问题或建议，请公众号留言;<br><strong style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; font-weight: bold;"><a href="#jump_20" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; color: rgb(30, 107, 184); overflow-wrap: break-word;">如果你觉得文章对你有帮助，欢迎关注分享</a></strong></p>
+</blockquote>
+<h1 id="h" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.6em;"><span style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">螺旋矩阵</span></h1>
+<h3 id="h-1" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.3em; border-bottom: 2px solid rgb(236, 68, 68);"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; font-weight: normal; background: rgb(236, 68, 68); color: rgb(255, 255, 255); padding: 3px 10px 0px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">题目</span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;"> </span></h3>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。</p>
+<h3 id="h1" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.3em; border-bottom: 2px solid rgb(236, 68, 68);"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; font-weight: normal; background: rgb(236, 68, 68); color: rgb(255, 255, 255); padding: 3px 10px 0px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">示例 1:</span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;"> </span></h3>
+<pre style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;"><code class="hljs cs" style="overflow-wrap: break-word; margin: 0px 2px; line-height: 18px; font-size: 14px; font-weight: normal; word-spacing: 0px; letter-spacing: 0px; font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px; overflow-x: auto; padding: 0.5em; color: rgb(51, 51, 51); background: rgb(248, 248, 248); white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow: auto !important; display: -webkit-box !important;">输入:<br>[<span class="hljs-meta" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 153); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;"><br>&nbsp;[&nbsp;1,&nbsp;2,&nbsp;3&nbsp;</span>],<br>&nbsp;[<span class="hljs-meta" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 153); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">&nbsp;4,&nbsp;5,&nbsp;6&nbsp;</span>],<br>&nbsp;[<span class="hljs-meta" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 153); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">&nbsp;7,&nbsp;8,&nbsp;9&nbsp;</span>]<br>]<br><br>输出:&nbsp;[<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">1</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">2</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">3</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">6</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">9</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">8</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">7</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">4</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">5</span>]<br></code></pre>
+<h3 id="h2" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.3em; border-bottom: 2px solid rgb(236, 68, 68);"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; font-weight: normal; background: rgb(236, 68, 68); color: rgb(255, 255, 255); padding: 3px 10px 0px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">示例 2:</span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;"> </span></h3>
+<pre style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;"><code class="hljs cs" style="overflow-wrap: break-word; margin: 0px 2px; line-height: 18px; font-size: 14px; font-weight: normal; word-spacing: 0px; letter-spacing: 0px; font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px; overflow-x: auto; padding: 0.5em; color: rgb(51, 51, 51); background: rgb(248, 248, 248); white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow: auto !important; display: -webkit-box !important;">输入:<br>[<span class="hljs-meta" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 153); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;"><br>&nbsp;&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4</span>],<br>&nbsp;&nbsp;[<span class="hljs-meta" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 153); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">5,&nbsp;6,&nbsp;7,&nbsp;8</span>],<br>&nbsp;&nbsp;[<span class="hljs-meta" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 153); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">9,10,11,12</span>]<br>]<br>输出:&nbsp;[<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">1</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">2</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">3</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">4</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">8</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">12</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">11</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">10</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">9</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">5</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">6</span>,<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">7</span>]<br></code></pre>
+<h3 id="h-2" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.3em; border-bottom: 2px solid rgb(236, 68, 68);"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; font-weight: normal; background: rgb(236, 68, 68); color: rgb(255, 255, 255); padding: 3px 10px 0px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">分析</span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;"> </span></h3>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">​        这道题大概意思就是遍历一个m*n的二维数组，通俗点讲就是农村包围城市，最先占领外围，然后向内逼近。   </p>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">​        仔细观察可以发现，遍历方向依次是<code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">右下左上</code>，因此我们可以从遍历方向上逐个击破。</p>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">假设有个大小为 <code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">m*n</code> 的矩阵，解题步骤如下</p>
+<ul style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; padding-left: 32px; list-style-type: disc;">
+<li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">定义方向</p>
+<pre style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;"><code class="java language-java hljs" style="overflow-wrap: break-word; margin: 0px 2px; line-height: 18px; font-size: 14px; font-weight: normal; word-spacing: 0px; letter-spacing: 0px; font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px; overflow-x: auto; padding: 0.5em; color: rgb(51, 51, 51); background: rgb(248, 248, 248); white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow: auto !important; display: -webkit-box !important;"><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">private</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">static</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;DIRECTION_RIGHT&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>;<br><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">private</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">static</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;DIRECTION_DOWN&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">1</span>;<br><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">private</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">static</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;DIRECTION_LEFT&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">2</span>;<br><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">private</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">static</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;DIRECTION_UP&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">3</span>;<br></code></pre></li>
+<li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">设置障碍</p>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">设置和原有矩阵相同的矩阵，使用 <code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">boolean</code> 类型表示当前位置是否被遍历，如果被遍历，则视为障碍物，遍历到此处需要调整方向。</p></li>
+<li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">分析每个方向的临界点（调整方向的位置）<br>有效数指障碍物前的最后一个位置的数</p>
+<table style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; display: table; width: 100%; text-align: left;">
+<thead style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;">
+<tr style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: white;">
+<th style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; font-weight: bold; background-color: rgb(240, 240, 240); text-align: center;">方向</th>
+<th style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; font-weight: bold; background-color: rgb(240, 240, 240); text-align: center;">临界点</th>
+<th style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; font-weight: bold; background-color: rgb(240, 240, 240); text-align: center;">避障措施</th>
+</tr>
+</thead>
+<tbody style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; border: 0px;">
+<tr style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: white;">
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">右</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">遍历到一行的最后一个有效数</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">调头向下</td>
+</tr>
+<tr style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: white;">
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">下</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">遍历到一列的最后一个有效数</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">调头向左</td>
+</tr>
+<tr style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: white;">
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">左</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">遍历到一行的第一个有效数</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">调头向上</td>
+</tr>
+<tr style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: white;">
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">上</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">遍历到一列的第一个有效数</td>
+<td style="color: inherit; line-height: inherit; margin: 0px; font-size: 1em; border: 1px solid rgb(204, 204, 204); padding: 0.5em 1em; text-align: center;">调头向右</td>
+</tr>
+</tbody>
+</table></li>
+<li style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; margin-bottom: 0.5em;"><p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;">遍历矩阵</p></li>
+</ul>
+<h3 id="h-3" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.3em; border-bottom: 2px solid rgb(236, 68, 68);"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; font-weight: normal; background: rgb(236, 68, 68); color: rgb(255, 255, 255); padding: 3px 10px 0px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">核心代码</span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;"> </span></h3>
+<pre style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px;"><code class="java language-java hljs" style="overflow-wrap: break-word; margin: 0px 2px; line-height: 18px; font-size: 14px; font-weight: normal; word-spacing: 0px; letter-spacing: 0px; font-family: Consolas, Inconsolata, Courier, monospace; border-radius: 0px; overflow-x: auto; padding: 0.5em; color: rgb(51, 51, 51); background: rgb(248, 248, 248); white-space: pre !important; word-wrap: normal !important; word-break: normal !important; overflow: auto !important; display: -webkit-box !important;">&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-function" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; word-wrap: inherit !important; word-break: inherit !important;"><span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">public</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">static</span>&nbsp;List&lt;Integer&gt;&nbsp;<span class="hljs-title" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 0, 0); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">spiralOrder</span><span class="hljs-params" style="font-size: inherit; color: inherit; line-height: inherit; margin: 0px; padding: 0px; word-wrap: inherit !important; word-break: inherit !important;">(<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>[][]&nbsp;matrix)</span>&nbsp;</span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;特殊值校验</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(matrix&nbsp;==&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">null</span>&nbsp;||&nbsp;matrix.length&nbsp;==&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>&nbsp;||&nbsp;matrix[<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>].length&nbsp;==&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">return</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">new</span>&nbsp;ArrayList&lt;&gt;();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;m&nbsp;=&nbsp;matrix.length;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;n&nbsp;=&nbsp;matrix[<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>].length;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Integer&gt;&nbsp;list&nbsp;=&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">new</span>&nbsp;ArrayList(m&nbsp;*&nbsp;n);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;设置遍历初始坐标和方向</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;row&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>,&nbsp;column&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>,&nbsp;direction&nbsp;=&nbsp;DIRECTION_RIGHT;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;设置路障</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">boolean</span>[][]&nbsp;obstacleArr&nbsp;=&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">new</span>&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">boolean</span>[m][n];<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;遍历数组</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">for</span>&nbsp;(<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">int</span>&nbsp;i&nbsp;=&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>;&nbsp;i&nbsp;&lt;&nbsp;m&nbsp;*&nbsp;n;&nbsp;i++)&nbsp;{<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.add(matrix[row][column]);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obstacleArr[row][column]&nbsp;=&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">true</span>;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;向右移动</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(direction&nbsp;==&nbsp;DIRECTION_RIGHT)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(column&nbsp;&lt;&nbsp;n&nbsp;-&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">1</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;避障转移</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(obstacleArr[row][column]&nbsp;==&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">true</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column--;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_DOWN;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_DOWN;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;向下移动</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(direction&nbsp;==&nbsp;DIRECTION_DOWN)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(row&nbsp;&lt;&nbsp;m&nbsp;-&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">1</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;避障转移</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(obstacleArr[row][column]&nbsp;==&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">true</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row--;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_LEFT;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_LEFT;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;向左移动</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(direction&nbsp;==&nbsp;DIRECTION_LEFT)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(column&nbsp;&gt;&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column--;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;避障转移</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(obstacleArr[row][column]&nbsp;==&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">true</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_UP;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_UP;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;向上移动</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(direction&nbsp;==&nbsp;DIRECTION_UP)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(row&nbsp;&gt;&nbsp;<span class="hljs-number" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(0, 128, 128); word-wrap: inherit !important; word-break: inherit !important;">0</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row--;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;避障转移，</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">if</span>&nbsp;(obstacleArr[row][column]&nbsp;==&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">true</span>)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;row++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-comment" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(153, 153, 136); font-style: italic; word-wrap: inherit !important; word-break: inherit !important;">//&nbsp;结束了一个轮回，走内环,开始新的一轮</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;column++;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_RIGHT;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">else</span>&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;direction&nbsp;=&nbsp;DIRECTION_RIGHT;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="hljs-keyword" style="font-size: inherit; line-height: inherit; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-weight: bold; word-wrap: inherit !important; word-break: inherit !important;">return</span>&nbsp;list;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br></code></pre>
+<h3 id="h-4" style="color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px; font-weight: bold; font-size: 1.3em; border-bottom: 2px solid rgb(236, 68, 68);"><span style="font-size: inherit; line-height: inherit; margin: 0px; display: inline-block; font-weight: normal; background: rgb(236, 68, 68); color: rgb(255, 255, 255); padding: 3px 10px 0px; border-top-right-radius: 3px; border-top-left-radius: 3px; margin-right: 3px;">完整源码</span><span style="display: inline-block; vertical-align: bottom; border-bottom: 36px solid rgb(239, 235, 233); border-right: 20px solid transparent;"> </span></h3>
+<p style="font-size: inherit; color: inherit; line-height: inherit; padding: 0px; margin: 1.5em 0px;"><code style="font-size: inherit; line-height: inherit; overflow-wrap: break-word; padding: 2px 4px; border-radius: 4px; margin: 0px 2px; color: rgb(233, 105, 0); background: rgb(248, 248, 248);">https://github.com/tinet-shenjg/leetCode4J</code></p></div>
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://tinet-shenjg.github.io/-iA1vnboo/">
+              <h3 class="post-title">
+                【LeetCode每日一题】盛最多水的容器
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '7fdd76b82cb0064f71e5',
+    clientSecret: '72ec607e6ee474bff90bcd0dd707fabf2755b277',
+    repo: 'git-talk-issue',
+    owner: 'tinet-shenjg',
+    admin: ['tinet-shenjg'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/tinet-shenjg" target="_blank">Alex</a>
+  <a class="rss" href="https://tinet-shenjg.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
